@@ -4,5 +4,9 @@
 }
 
 *.cfv3.org {
-    respond "Vasary Lab internal" 200
+    reverse_proxy http://{labels.0}:80
+
+    handle_errors {
+        respond "Service not available" 503
+    }
 }
