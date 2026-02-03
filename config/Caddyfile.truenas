@@ -1,21 +1,13 @@
 {
-    email admin+internal@cfv3.org
+    email admin@cfv3.org
     debug
     auto_https off
 }
-{
-    @cfv3 host *.cfv3.org
 
-    handle @cfv3 {
+*.cfv3.org {
     reverse_proxy {labels.0}:80
 
     handle_errors {
-            respond "Service not available" 503
-        }
-    }
-
-    handle {
-        header Content-Type application/json
-        respond `{"error":"service not registered","host":"{http.request.host}"}` 200
+        respond "Service not available" 503
     }
 }
