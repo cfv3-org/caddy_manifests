@@ -1,6 +1,7 @@
 {
     email admin@cfv3.org
     debug
+    auto_https off
 }
 
 *.cfv3.org {
@@ -9,4 +10,10 @@
     handle_errors {
         respond "Service not available" 503
     }
+}
+
+:80 {
+    respond `{"error":"service not registered","host":"{http.request.host}"}` 404 {
+      header Content-Type application/json
+  }
 }
