@@ -4,7 +4,7 @@
 }
 
 *.cfv3.org {
-    reverse_proxy http://{labels.0}:80
+    reverse_proxy {labels.0}:80
 
     handle_errors {
         respond "Service not available" 503

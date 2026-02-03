@@ -14,7 +14,7 @@ env:
   PLATFORM: linux/arm/v7
 
 jobs:
-  build-armv7:
+  build-mikrotik:
     runs-on: ubuntu-latest
 
     steps:

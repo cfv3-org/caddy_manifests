@@ -14,7 +14,7 @@ env:
   PLATFORM: linux/amd64
 
 jobs:
-  build-armv7:
+  build-true-nas:
     runs-on: ubuntu-latest
 
     steps:
