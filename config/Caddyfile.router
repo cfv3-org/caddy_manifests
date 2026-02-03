@@ -1,6 +1,5 @@
 {
-    email admin@cfv3.org
-    debug
+    email {env.ADMIN_EMAIL}
 }
 
 *.cfv3.org {
@@ -8,5 +7,5 @@
             dns cloudflare {env.CF_API_TOKEN}
         }
 
-    respond "Vasary Lab" 200
+    reverse_proxy {env.UPSTREAM_URL}
 }
