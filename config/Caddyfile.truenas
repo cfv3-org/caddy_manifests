@@ -5,9 +5,17 @@
 }
 
 *.cfv3.org {
-    reverse_proxy {labels.0}:80
+    header Content-Type application/json
+    respond `{"error":"service not registered","host":"{http.request.host}","label":"{labels.0}"}` 200
 
-    handle_errors {
-        respond "Service not available" 503
-    }
+#    reverse_proxy {labels.0}:80
+#
+#    handle_errors {
+#        respond "Service not available" 503
+#    }
 }
+
+#{
+#    header Content-Type application/json
+#    respond `{"error":"service not registered","host":"{http.request.host}"}` 200
+#}
