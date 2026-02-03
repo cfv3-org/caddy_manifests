@@ -1,0 +1,11 @@
+{
+    email admin@cfv3.org
+}
+
+*.cfv3.org {
+    tls {
+            dns cloudflare
+        }
+
+    respond "Vasary Lab" 200
+}
