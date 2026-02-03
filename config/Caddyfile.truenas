@@ -12,7 +12,7 @@
     }
 }
 
-:80 {
+{
     header Content-Type application/json
     respond `{"error":"service not registered","host":"{http.request.host}"}` 404
 }
