@@ -4,15 +4,11 @@
     auto_https off
 }
 
-*.cfv3.org {
-    reverse_proxy {labels.0}:80
-
-    handle_errors {
-        respond "Service not available" 503
-    }
-}
-
-:80 {
-    header Content-Type application/json
-    respond `{"error":"service not registered","host":"{http.request.host}"}` 404
+*:80 {
+    respond "Vasary lab" 200
+#    reverse_proxy {labels.0}:80
+#
+#    handle_errors {
+#        respond "Service not available" 503
+#    }
 }
