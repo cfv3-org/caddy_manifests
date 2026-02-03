@@ -3,7 +3,6 @@
     debug
     auto_https off
 }
-
 {
     @cfv3 host *.cfv3.org
 
